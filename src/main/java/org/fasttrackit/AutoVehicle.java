@@ -1,6 +1,5 @@
 package org.fasttrackit;
 
-public class Car extends AutoVehicle {
-    // "has-a" relationship
+public class AutoVehicle extends Vehicle {
     Engine engine;
 }
