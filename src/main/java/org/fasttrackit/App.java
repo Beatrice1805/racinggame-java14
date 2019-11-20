@@ -8,9 +8,8 @@ public class App
 {
 
     // one line comment
-    public static void main( String[] args )
-    {
-        System.out.println( "Welcome to the Racing Game!" );
+    public static void main( String[] args ) {
+        System.out.println("Welcome to the Racing Game!");
         Car carReference = new Car();
         carReference.name = "Dacia";
         carReference.color = "red";
@@ -30,13 +29,13 @@ public class App
         System.out.println(carReference.engine.manufacturer);
         System.out.println(carReference.engine.capacity);
 
-        double accelerationDistance = carReference.accelerate (60,  1);
+        double accelerationDistance = carReference.accelerate(60, 1);
 
-        System.out.println("Acceleration distance: " +accelerationDistance);
+        System.out.println("Acceleration distance: " + accelerationDistance);
         Mechanic mechanic = new Mechanic();
         mechanic.repairVehicle(carReference);
 
-        System.out.println("Total traveled distance after repair: " +  carReference.traveledDistance);
+        System.out.println("Total traveled distance after repair: " + carReference.traveledDistance);
 
 
         Car car2 = new Car();
@@ -46,7 +45,7 @@ public class App
 
         //concatenation
         System.out.println(carReference);
-        System.out.println( "First car name: " + carReference.name);
+        System.out.println("First car name: " + carReference.name);
         System.out.println(carReference.color);
         System.out.println(carReference.mileage);
         System.out.println(carReference.fuelLevel);
@@ -55,7 +54,7 @@ public class App
         System.out.println(carReference.running);
         System.out.println(carReference.doorCount);
 
-        System.out.println( "Second car name: " + car2.name);
+        System.out.println("Second car name: " + car2.name);
         System.out.println(car2.color);
         System.out.println(car2.mileage);
         System.out.println(car2.fuelLevel);
@@ -72,7 +71,12 @@ public class App
         System.out.println("car2 name: " + car2.name);
         System.out.println("car3 name: " + car3.name);
         // example for NullPointerException
-       // Car car4 = null;
+        // Car car4 = null;
         //System.out.println(car4.name);
-    }
-}
+        System.out.println("Modulo example:");
+        System.out.println(4 % 2);
+        System.out.println(4 % 3);
+        System.out.println(4 % 2 == 0);
+
+
+
