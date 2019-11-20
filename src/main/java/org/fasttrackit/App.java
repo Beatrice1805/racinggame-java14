@@ -7,10 +7,16 @@ package org.fasttrackit;
 public class App 
 {
 
+
     // one line comment
     public static void main( String[] args ) {
+        Engine carEngine = new Engine();
+        carEngine.manufacturer = "Renault";
+        carEngine.capacity = 1.5;
+
+
         System.out.println("Welcome to the Racing Game!");
-        Car carReference = new Car();
+        Car carReference = new Car (carEngine);
         carReference.name = "Dacia";
         carReference.color = "red";
         carReference.mileage = 9.8;
@@ -20,9 +26,6 @@ public class App
         carReference.doorCount = 2;
 
 
-        Engine carEngine = new Engine();
-        carEngine.manufacturer = "Renault";
-        carEngine.capacity = 1.5;
         carReference.engine = carEngine;
 
         System.out.println("Engine details...");
@@ -37,8 +40,12 @@ public class App
 
         System.out.println("Total traveled distance after repair: " + carReference.traveledDistance);
 
+        Engine car2Engine = new Engine();
+        car2Engine.manufacturer = "Bavaria Motors";
+        car2Engine.capacity = 2;
 
-        Car car2 = new Car();
+
+        Car car2 = new Car(car2Engine);
         car2.name = "BMW";
         car2.mileage = 14;
         car2.color = null;
