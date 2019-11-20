@@ -5,6 +5,9 @@ import java.util.Date;
 
 public class Vehicle {
 
+    // class variable
+    static int totalCount;
+
     // instance variables
     String name;
     String color;
@@ -13,6 +16,10 @@ public class Vehicle {
     double fuelLevel;
     double traveledDistance;
     boolean running;
+
+    public vehicle() {
+        totalCount++
+    }
 
 
     Date creationDate = new Date(2019, 11, 30);
@@ -33,8 +40,21 @@ public class Vehicle {
         System.out.println("Used fuel :" + usedFuel);
         fuelLevel -= usedFuel;
         System.out.println("Remaining fuel level: " +fuelLevel);
-        return distance;
 
+
+        System.out.println("Studying class variables (static variable)...");
+        Vehicle vehicle1 = new Vehicle();
+        vehicle1.totalCount = 10;
+
+        Vehicle vehicle2 = new Vehicle();
+        vehicle2.totalCount = 20;
+
+        Vehicle.totalCount = 30;
+
+        System.out.println("Total vehicle count from vehicle1: " + vehicle1.totalCount);
+        System.out.println("Total vehicle count from vehicle2: " + vehicle2.totalCount);
+        System.out.println("Total vehicle count from Vehicle class: " + Vehicle.totalCount);
+        return distance;
 
     }
 
