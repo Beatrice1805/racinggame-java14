@@ -20,18 +20,12 @@ public class App
         game.start();
 
         Car carReference = new Car (carEngine);
-        carReference.name = "Dacia";
         carReference.setName("Dacia");
-        carReference.color = "red";
         carReference.setColor("red");
-        carReference.mileage = 9.8;
-        carReference.setMileage("9.8");
-        carReference.fuelLevel = 60;
-        carReference.setFuelLevel("60");
-        carReference.maxSpeed = 200;
-        carReference.setMaxSpeed("200");
-        carReference.running = false;
-        carReference.setRunning("false");
+        carReference.setMileage(9.8);
+        carReference.setFuelLevel(60);
+        carReference.setMaxSpeed(200);
+        carReference.setRunning(false);
         carReference.doorCount = 2;
 
 
@@ -72,13 +66,13 @@ public class App
         System.out.println(carReference.getColor());
         System.out.println(carReference.doorCount);
 
-        System.out.println("Second car name: " + car2.name);
-        System.out.println(car2.color);
-        System.out.println(car2.mileage);
-        System.out.println(car2.fuelLevel);
-        System.out.println(car2.traveledDistance);
-        System.out.println(car2.maxSpeed);
-        System.out.println(car2.running);
+        System.out.println("Second car name: " + car2.setName());
+        System.out.println(car2.getColor());
+        System.out.println(car2.getMileage());
+        System.out.println(car2.getFuelLevel());
+        System.out.println(car2.getTraveledDistance());
+        System.out.println(car2.getMaxSpeed());
+        System.out.println(car2.isRunning());
         System.out.println(car2.doorCount);
 
         car2.setName() = "VW";
@@ -86,8 +80,8 @@ public class App
 
         Car car3 = car2;
         car3.setName("Audi");
-        System.out.println("car2 name: " + car2.name);
-        System.out.println("car3 name: " + car3.name);
+        System.out.println("car2 name: " + car2.setName());
+        System.out.println("car3 name: " + car3.setName());
         // example for NullPointerException
         // Car car4 = null;
         //System.out.println(car4.name);
