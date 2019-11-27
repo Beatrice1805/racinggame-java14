@@ -16,6 +16,10 @@ public class App
 
 
         System.out.println("Welcome to the Racing Game!");
+
+        Game game = new Game();
+        game.start();
+
         Car carReference = new Car (carEngine);
         carReference.name = "Dacia";
         carReference.color = "red";
