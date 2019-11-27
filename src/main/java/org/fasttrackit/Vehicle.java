@@ -1,8 +1,5 @@
 package org.fasttrackit;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 public class Vehicle {
 
     // class variable
@@ -17,45 +14,60 @@ public class Vehicle {
     double traveledDistance;
     boolean running;
 
-    public vehicle() {
-        totalCount++
+    public Vehicle() {
+        totalCount++;
     }
 
-
-    Date creationDate = new Date(2019, 11, 30);
-    LocalDate createdDate = LocalDate.now().minusWeeks(2);
-    long timestamp = 31254L;
-
     public double accelerate(double speed, double durationInHours) {
-        System.out.println(name + " is accelerating with " + speed + " for " +durationInHours + "h.");
+        double mileageMultiplier = 1;
 
-        //local variable (declared inside a method)
-        double distance= speed * durationInHours;
+        System.out.println(name + " is accelerating with "
+                + speed + " for " + durationInHours + "h.");
+
+        if (speed > maxSpeed) {
+            System.out.println("Sorry. Maximum speed exceeded.");
+            return 0;
+        } else if (speed == maxSpeed) {
+            System.out.println("Careful! Max speed reached.");
+        } else {
+            System.out.println("Valid speed entered.");
+        }
+
+        if (fuelLevel <= 0) {
+            System.out.println("You don't have enough fuel.");
+            return 0;
+        }
+
+        if (speed > 120) {
+            System.out.println("Going fast... you'll use more fuel.");
+
+// increasing mileage multiplier with percentage of acceleration acceleration's speed
+            mileageMultiplier = speed / 100;
+        }
+
+// local variable (declared inside a method)
+        double distance = speed * durationInHours;
 
         traveledDistance = traveledDistance + distance;
-        // same result as the statement above
-      //   traveledDistance += distance;+
-        System.out.println(" Total traveled distance: accelerate");
-        double usedFuel = distance * mileage/ 100;
-        System.out.println("Used fuel :" + usedFuel);
-        fuelLevel -= usedFuel;
-        System.out.println("Remaining fuel level: " +fuelLevel);
+// same result as the statement above
+// traveledDistance += distance;
 
+        System.out.println("Total traveled distance: " + traveledDistance);
 
-        System.out.println("Studying class variables (static variable)...");
-        Vehicle vehicle1 = new Vehicle();
-        vehicle1.totalCount = 10;
+        double usedFuelWithStandardMileage = distance * mileage / 100;
+        System.out.println("Used fuel with standard mileage: " + usedFuelWithStandardMileage);
 
-        Vehicle vehicle2 = new Vehicle();
-        vehicle2.totalCount = 20;
+        double usedFuelWithCurrentMileage =
+                usedFuelWithStandardMileage * mileageMultiplier;
 
-        Vehicle.totalCount = 30;
+        System.out.println("Used fuel with current mileage: "
+                + usedFuelWithCurrentMileage);
 
-        System.out.println("Total vehicle count from vehicle1: " + vehicle1.totalCount);
-        System.out.println("Total vehicle count from vehicle2: " + vehicle2.totalCount);
-        System.out.println("Total vehicle count from Vehicle class: " + Vehicle.totalCount);
+        fuelLevel -= usedFuelWithCurrentMileage;
+
+        System.out.println("Remaining fuel level: " + fuelLevel);
+
         return distance;
-
     }
 
 }
