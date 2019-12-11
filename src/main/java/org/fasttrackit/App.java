@@ -36,8 +36,9 @@ public class App
         System.out.println(carReference.engine.capacity);
 
         double accelerationDistance = carReference.accelerate(200, 1);
-
         System.out.println("Acceleration distance: " + accelerationDistance);
+        double accelerationDistance1 = carReference.accelerate( 120);
+
         Mechanic mechanic = new Mechanic();
         mechanic.repairVehicle(carReference);
 
@@ -51,9 +52,9 @@ public class App
         Car car2 = new Car(car2Engine);
         car2.setName("BMW");
         car2.setName("BMW");
-        car2.setMileage("14");
+
         car2.setMileage(14);
-        car2.setFuelLevel(); = null;
+        car2.setFuelLevel(1);
 
         //concatenation
         System.out.println(carReference);
@@ -66,7 +67,7 @@ public class App
         System.out.println(carReference.getColor());
         System.out.println(carReference.doorCount);
 
-        System.out.println("Second car name: " + car2.setName());
+        System.out.println("Second car name: " + car2.getName());
         System.out.println(car2.getColor());
         System.out.println(car2.getMileage());
         System.out.println(car2.getFuelLevel());
@@ -75,13 +76,13 @@ public class App
         System.out.println(car2.isRunning());
         System.out.println(car2.doorCount);
 
-        car2.setName() = "VW";
-        System.out.println(car2.setName();
+        car2.setName("VW)");
+        System.out.println(car2.getName());
 
         Car car3 = car2;
         car3.setName("Audi");
-        System.out.println("car2 name: " + car2.setName());
-        System.out.println("car3 name: " + car3.setName());
+        System.out.println("car2 name: " + car2.getName());
+        System.out.println("car3 name: " + car3.getName());
         // example for NullPointerException
         // Car car4 = null;
         //System.out.println(car4.name);
@@ -91,4 +92,4 @@ public class App
         System.out.println(4 % 2 == 0);
 
     }
-    }
+}
