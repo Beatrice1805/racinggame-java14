@@ -8,10 +8,18 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
+Game game = new Game ();
+game.start();
+        // do
+        //while (true)
+        }
 public class Game {
     private Track[] tracks = new Track[3];
+    private List<Vehicle> competitors
+    private boolean winnerNotKnown = true;
+    private int competitorsWithoutFuel = 0
 
-     List<Vehicle> competitors = new ArrayList<>();
+     List<Vehicle> competitors = new ArrayList();
 
 
     public void start() throws Exception {
@@ -23,11 +31,13 @@ public class Game {
         Track selectedTrack = getSelectedTrackFromUser();
 
         initializeComeptitors();
-        Vehicle[] competitors = new Vehicle[0];
-        for (Vehicle vehicle : competitors) {
-            System.out.println("It's " + vehicle.getName() + "'s turn.");
 
-        }
+      while (winnerNotKnown competitorsWithoutFuel < competitors.size()) {
+            System.out.println();
+            System.out.println("New round");
+          playOneRound(selectedTrack);
+      }
+
         private double getAccelerationSpeedFromUser;{
             System.out.println("Please enter acceleration speed");
             try {
@@ -77,6 +87,8 @@ public class Game {
             System.out.println(" The winner is " + vehicle.getName() + "!");
             break;
         }
+        if (vehicle.getFuelLevel() <-0
+            competitorsWithoutFuel;
     }
 
     private Track getSelectedTrackFromUser();
