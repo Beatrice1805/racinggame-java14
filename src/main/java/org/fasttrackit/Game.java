@@ -3,6 +3,7 @@ package org.fasttrackit;
 import org.w3c.dom.ls.LSOutput;
 
 import javax.sound.midi.Track;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -11,8 +12,7 @@ public class Game {
     private List<Vehicle>
 
 
-    public void start ()
-    {
+    public void start () throws Exception {
         System.out.println("Starting Game...");
 
         initializeTracks();
@@ -31,11 +31,22 @@ public class Game {
         Scanner scanner = new Scanner (System.in);
 
     }
-private Track getSelectedTrackFromUser(){
+private Track getSelectedTrackFromUser; {
         System.out.println("Please selectr track number");
         Scanner scanner = new Scanner (System.in);
-        int.selectedTrackNumber
+        try {
+        int selectedTrackNumber = scanner.nextInt();
+        Track selectedTrack = tracks(selectedTrackNumber -1);
+            System.out.println(" Selected track in " + selectedTrack.getName();
+            return selectedTrack;
+        } catch (InputMismatchException e) {
+            throw new RuntimeException("You have entered an invalid value.");
+        } catch(ArrayIndexOutOfBoundsException e) {
+            throw new Exception(" eYou have selected a non-exiting track");
+
+        }
     }
+
 
         int playerCount = getPlayerCountFromUser();
 
