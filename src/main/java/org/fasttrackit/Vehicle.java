@@ -18,6 +18,7 @@ public class Vehicle {
         totalCount++;
     }
 
+    // method overloading
     public double accelerate (double speed) {
         return accelerate(speed, 1);
     }
@@ -125,10 +126,23 @@ public class Vehicle {
 
     public void setRunning(boolean running) {
         this.running = running;
+
     }
 
     public String getName() {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                ", mileage=" + mileage +
+                ", maxSpeed=" + maxSpeed +
+                ", fuelLevel=" + fuelLevel +
+                ", traveledDistance=" + traveledDistance +
+                ", running=" + running +
+                '}';
+    }
 }

@@ -9,6 +9,16 @@ public class App
 
     // one line comment
     public static void main( String[] args ) {
+
+        JokerVehicle joker=new JokerVehicle();
+        joker.setName("Joker");
+        joker.setFuelLevel(80);
+
+        joker.accelerate(60,1);
+        System.out.println("Joker's total distance:"+ joker.getTraveledDistance());
+
+        Car carWithDefaultEngine =new Car();
+
         Engine carEngine = new Engine();
         carEngine.manufacturer = "Renault";
         carEngine.capacity = 1.5;
@@ -18,6 +28,9 @@ public class App
 
         Game game = new Game();
         game.start();
+
+
+
 
         Car carReference = new Car (carEngine);
         carReference.setName("Dacia");
@@ -57,7 +70,7 @@ public class App
         car2.setFuelLevel(1);
 
         //concatenation
-        System.out.println(carReference);
+        System.out.println(carReference.toString());
         System.out.println("First car name: " + carReference.getName());
         System.out.println(carReference.getColor());
         System.out.println(carReference.getMileage());
