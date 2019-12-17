@@ -74,12 +74,21 @@ public class Vehicle {
         System.out.println("Remaining fuel level: " + fuelLevel);
 
         return distance;
+
+    }
+    // co-variant return type
+    @Override
+        public Vehicle clone() {
+            return new Vehicle();
+        }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name.trim();
     }
-
     public String getColor() {
         return color;
     }
@@ -127,10 +136,7 @@ public class Vehicle {
     public void setRunning(boolean running) {
         this.running = running;
 
-    }
 
-    public String getName() {
-        return name;
     }
 
     @Override

@@ -8,7 +8,11 @@ public class App
 {
 
     // one line comment
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws Exception {
+        System.out.println("Welcome to the Racing Game!");
+
+        Game game = new Game();
+        game.start();
 
         JokerVehicle joker=new JokerVehicle();
         joker.setName("Joker");
@@ -24,10 +28,7 @@ public class App
         carEngine.capacity = 1.5;
 
 
-        System.out.println("Welcome to the Racing Game!");
 
-        Game game = new Game();
-        game.start();
 
 
 
