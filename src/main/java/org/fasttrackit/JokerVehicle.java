@@ -18,6 +18,10 @@ public class JokerVehicle extends Vehicle {
     // access cannot be more restrictive than in the parent class
     @Override
     public JokerVehicle clone(){
+
         return new JokerVehicle();
+    }
+    public void fly(){
+        System.out.println("Flying!!!");
     }
 }

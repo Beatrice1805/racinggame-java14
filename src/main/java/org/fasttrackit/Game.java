@@ -14,6 +14,7 @@ game.start();
         //while (true)
         }
 public class Game {
+
     private Track[] tracks = new Track[3];
     private List<Vehicle> competitors
     private boolean winnerNotKnown = true;
