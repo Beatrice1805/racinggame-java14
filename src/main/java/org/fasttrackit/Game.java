@@ -8,6 +8,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
+
 public class Game {
 
     private Track[] tracks = new Track[3];
