@@ -8,17 +8,58 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-Game game = new Game ();
-game.start();
-        // do
-        //while (true)
-        }
 public class Game {
 
     private Track[] tracks = new Track[3];
-    private List<Vehicle> competitors
-    private boolean winnerNotKnown = true;
-    private int competitorsWithoutFuel = 0
+
+    int[]ints = new int[10];
+
+    public void start() {
+        System.out.println("Starting game...");
+
+        initializeTracks();
+        displayTracks();
+
+        int playerCount = getPlayerCountFromUser();
+        System.out.println("Number of players: " + playerCount);
+
+        String vehicleName = getVehicleNameFromUser();
+        System.out.println("Name from user: " + vehicleName);
+    }
+        private void initializeTracks() {
+            Track track1 = new Track();
+            track1.setName("Silverstone");
+            track1.setLength(4.2);
+
+            tracks[0] = track1;
+
+            Track track2 = new Track();
+            track2.setName("Transylvania");
+            track2.setLength(400.2);
+            tracks[1] = track2;
+        }
+        private void displayTracks() {
+            System.out.println("Available tracks:");
+
+            //classic for loop
+            for(int i = 0; i < tracks.length; i++){
+                if(tracks[i] != null) {
+                    System.out.println(
+                            (i + 1)+"."+ tracks[i].getName() + " - "+ tracks[i].getLength() +"km");
+                }
+            }
+        }
+            private String getVehicleNameFromUser() {
+                System.out.println("Please enter vehicle name.");
+                Scanner scanner = new Scanner(System.in);
+                return scanner.nextLine();
+
+
+     }
+         private Track[] tracks = new Track[3];
+         private List<Vehicle> competitors
+         private boolean winnerNotKnown = true;
+         private int competitorsWithoutFuel = 0;
 
      List<Vehicle> competitors = new ArrayList();
 
@@ -72,11 +113,7 @@ public class Game {
         }
 
 
-        int playerCount = getPlayerCountFromUser();
 
-        String vehicleName = getVehicleNameFromUser();
-
-        System.out.println("Name from user: " + vehicleName);
 
         //enhanced for
         for (Vehicle vehicle : competitors)
@@ -118,7 +155,8 @@ Track selectedTrack =  tracks[getSelectedTrackFromUser(-1)];)
                     vehicle.getName() + "- Mileage");
             competitors.add(vehicle);
         }
-    }
+        }
+
 
     private String getVehicleNameFromUser() {
         System.out.println("Please enter vehicle name.");
